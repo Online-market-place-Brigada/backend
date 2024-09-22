@@ -1,4 +1,5 @@
 import { Column, DataType, HasMany, Model, Table } from "sequelize-typescript";
+import { ImageOfProduct } from "src/image_of_product/models/image_of_product.model";
 import { Like } from "src/likes/models/like.model";
 
 interface IProductCreationAttr {
@@ -24,4 +25,7 @@ export class Product extends Model<Product, IProductCreationAttr> {
 
   @HasMany(() => Like)
   like: Like[];
+
+  @HasMany(() => ImageOfProduct)
+  Image_of_product: ImageOfProduct[];
 }
