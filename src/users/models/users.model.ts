@@ -1,4 +1,5 @@
-import { Column, DataType, Model, Table } from "sequelize-typescript";
+import { Column, DataType, HasMany, Model, Table } from "sequelize-typescript";
+import { Cart } from "src/cart/models/cart.model";
 
 interface IUsersCreationAttr {
   first_name: string;
@@ -31,4 +32,7 @@ export class Users extends Model<Users, IUsersCreationAttr> {
 
   @Column({ type: DataType.STRING })
   password: string;
+
+  @HasMany(() => Cart)
+  cart: Cart[];
 }

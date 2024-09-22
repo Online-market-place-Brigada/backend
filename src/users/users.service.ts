@@ -23,7 +23,7 @@ export class UsersService {
     return this.usersModel.destroy({ where: { id } });
   }
 
-  async update(id: number, updateUsersDto: UpdateUsersDto) {
+  async update(id: number, updateUsersDto: UpdateUsersDto): Promise<Users> {
     const users = await this.usersModel.update(updateUsersDto, {
       where: { id },
       returning: true,
