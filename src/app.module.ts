@@ -5,6 +5,10 @@ import { UsersModule } from "./users/users.module";
 import { Users } from "./users/models/users.model";
 import { CartModule } from "./cart/cart.module";
 import { Cart } from "./cart/models/cart.model";
+import { ProductsModule } from "./products/products.module";
+import { Product } from "./products/models/product.model";
+import { LikesModule } from "./likes/likes.module";
+import { Like } from "./likes/models/like.model";
 
 @Module({
   imports: [
@@ -16,7 +20,7 @@ import { Cart } from "./cart/models/cart.model";
       username: process.env.POSTGRES_USER,
       password: process.env.POSTGRES_PASSWORD,
       database: process.env.POSTGRES_DB,
-      models: [Users, Cart],
+      models: [Users, Cart, Product, Like],
       autoLoadModels: true,
       sync: { alter: true },
       synchronize: true,
@@ -24,6 +28,8 @@ import { Cart } from "./cart/models/cart.model";
     }),
     UsersModule,
     CartModule,
+    ProductsModule,
+    LikesModule,
   ],
 })
 export class AppModule {}

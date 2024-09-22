@@ -1,5 +1,6 @@
 import { Column, DataType, HasMany, Model, Table } from "sequelize-typescript";
 import { Cart } from "src/cart/models/cart.model";
+import { Like } from "src/likes/models/like.model";
 
 interface IUsersCreationAttr {
   first_name: string;
@@ -33,6 +34,6 @@ export class Users extends Model<Users, IUsersCreationAttr> {
   @Column({ type: DataType.STRING })
   password: string;
 
-  @HasMany(() => Cart)
-  cart: Cart[];
+  @HasMany(() => Like)
+  like: Like[];
 }
