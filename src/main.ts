@@ -1,7 +1,7 @@
 import { NestFactory } from "@nestjs/core";
 import { AppModule } from "./app.module";
 
-async function bootstrap() {
+async function start() {
   const app = await NestFactory.create(AppModule);
   const PORT = process.env.PORT || 3030;
   app.setGlobalPrefix("api");
@@ -9,4 +9,4 @@ async function bootstrap() {
     console.log(`Server running at port http://localhost:${PORT}`);
   });
 }
-bootstrap();
+start();
