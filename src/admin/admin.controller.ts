@@ -15,12 +15,12 @@ import { UpdateAdminDto } from "./dto/update-admin.dto";
 export class AdminController {
   constructor(private readonly adminService: AdminService) {}
 
-  @Post("create")
+  @Post()
   create(@Body() createAdminDto: CreateAdminDto) {
     return this.adminService.create(createAdminDto);
   }
 
-  @Get("all")
+  @Get()
   findAll() {
     return this.adminService.findAll();
   }

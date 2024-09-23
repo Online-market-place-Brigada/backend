@@ -15,12 +15,12 @@ import { UpdateImageOfProductDto } from "./dto/update-image_of_product.dto";
 export class ImageOfProductController {
   constructor(private readonly imageOfProductService: ImageOfProductService) {}
 
-  @Post("create")
+  @Post()
   create(@Body() createImageOfProductDto: CreateImageOfProductDto) {
     return this.imageOfProductService.create(createImageOfProductDto);
   }
 
-  @Get("all")
+  @Get()
   findAll() {
     return this.imageOfProductService.findAll();
   }
